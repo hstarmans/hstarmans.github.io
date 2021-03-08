@@ -1,0 +1,43 @@
+{# This simple template derives from ``base.html``. See ``base.html`` for
+   more information about template inheritance. #}
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+
+{# Inside the ``content`` is where you should place most of your own stuff.
+   This will keep scripts at the page end and a navbar you add on later
+   intact. #}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+       <div class="col-sm-7 center" >
+              <div class="text-left">
+                 <p class="lead"><b>Business Case & Technology:</b> <br>
+		 All linear illumination technologies in the world use mirrors, are closed source and guarded by patents.
+		 Hexastorm addresses this customer pain by building an open source linear illumination technology which uses a prism.
+		 The industry overlooked prism scanning so a lot of markets are disrupted. Market details can be found in my 
+                 <a href='https://cdn.hackaday.io/files/21933938381472/analysts_presentation.pdf'>presentation</a>.
+                 The technology is described in a <a href='https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER'> whitepaper </a> on Reprap.
+              </div>
+       </div>
+  </div>
+  <div class="row">
+       <div class="col-sm-7 center" >
+              <div class="text-left">
+                 <p class="lead"><b>Name:</b> <br>
+                 Hexa refers to hexagon. A hexagon is shown in the center of the logo. Storm makes a reference to the rotating prism in a transparent polygon scanner. 
+                 The name was inspired by the spinning hexagonal cloud pattern on the north pole of Saturn, a Hexastorm.
+                 </p>
+                 <img alt="<error: cannot load photo hexastorm>" src="/static/cassini2012.jpg" width=100%>
+              </div>      
+       </div>
+  </div>
+</div>
+
+{% endblock %}

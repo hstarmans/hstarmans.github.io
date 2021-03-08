@@ -1,0 +1,20 @@
+
+
+nav.navbar a {
+  text-decoration: None;
+  color: green;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+nav.navbar .active {
+  font-weight: bold;
+}
+
+
+nav.navbar ul li {
+  margin-top: 40px;
+  margin-left: 40px;
+  float: center;
+}
+

@@ -1,0 +1,46 @@
+{# This simple template derives from ``base.html``. See ``base.html`` for
+   more information about template inheritance. #}
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+
+{# Inside the ``content`` is where you should place most of your own stuff.
+   This will keep scripts at the page end and a navbar you add on later
+   intact. #}
+
+{% block content %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-98861019-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<div class="container">
+        <div class="row lead text-left">
+          <div class="col-sm-8 center" >
+            Hexastorm develops an open hardware fast high resolution LASER suited for Printed Circuit Board (PCB) manufacturing or 3D printing. 
+            The laser head uses a rotating prism instead of the industry standard rotating mirror. The technology is ideally suited for laser diodes.
+            The current focus is to create more sustainable textile with lasers. By locally applying heat, the absorption of dye into the textile 
+	    can be tuned.           
+            A video of the scanner can be seen on <a href="https://youtu.be/SofTXG5s_MA">Youtube</a>.
+            A blog with recent progress and technical details can be found on <a href="https://hackaday.io/project/21933-open-hardware-fast-high-resolution-laser">
+            Hackaday</a>. 
+          </div>
+        </div>
+        <div class="row">    
+            <div class="col-sm-8">
+                <img alt="<error: cannot load photo hexastorm>" src="/static/laserscanner.jpg"  width =60% > 
+            </div>
+        </div>
+</div>     
+{% endblock %}

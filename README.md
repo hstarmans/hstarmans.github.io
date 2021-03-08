@@ -1,3 +1,3 @@
 # About
 
-Current static website for hexastorm.com
+Remnant of old page is available in static and template folder.
