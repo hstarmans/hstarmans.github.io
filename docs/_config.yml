@@ -11,7 +11,7 @@ exclude_patterns: [LICENSE.md]
 
 # Information about where the book exists on the web
 repository:
-  url  : https://github.com/jurra/hexastorm
+  url  : https://github.com/hstarmans/hstarmans.github.io
 
 
 
@@ -22,7 +22,7 @@ html:
   use_repository_button: true
   comments:
     utterances:
-      repo: "jurra/hexastorm" 
+      repo: "hstarmans/hstarmans.github.io" 
   
   home_page_in_navbar: true
   extra_footer: |
