@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome! &#8212; Hexastorm Laserscanner</title>
+    <title>History &#8212; Hexastorm Laserscanner</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -85,8 +85,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="History" href="../02_History/0_Project_Setup.html" />
-    <link rel="prev" title="Hexastorm: Open-hardware fast high resolution LASER" href="../index.html" />
+    <link rel="next" title="Links" href="../03_Links/README.html" />
+    <link rel="prev" title="Welcome!" href="../01_Welcome%21/0_README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -124,13 +124,13 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_Welcome%21/0_README.html">
    Welcome!
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_History/0_Project_Setup.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    History
   </a>
  </li>
@@ -185,7 +185,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/01_Welcome!/0_README.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/02_History/0_Project_Setup.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -231,14 +231,22 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="welcome">
-<h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
-<p>A video of the laser scanner in action and writing is shown below.
-Click on the images to watch the video.</p>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=6PEZtsm7FvE"><img alt="Laser in action not showing" src="http://img.youtube.com/vi/6PEZtsm7FvE/0.jpg" /></a></p>
-<p>The optical design is desribed in the following video.</p>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=kekMkjqzRjE"><img alt="Optical design" src="http://img.youtube.com/vi/kekMkjqzRjE/0.jpg" /></a></p>
-<p>Reading from the substrate is not yet tested and in development.</p>
+  <div class="section" id="history">
+<h1>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h1>
+<p>The project starts with the assumption that it is not possible to get a laser grid. There are ways around this, e.g. laser with a DMD device. There is also research into nano-lasers; which could possible form a laser led screen. All these technologies have their limitations, due to cooling, diffraction or focusing of the laser. A way around this is moving the laser bundle either by mirrors or prisms.
+Rotating prisms have a lower cross-scan error and require simpler optics than rotating mirrors.
+The initial idea of using prism for laser scanning originates from Dr. Jacobus Jamar and was developed at <a class="reference external" href="https://www.tno.nl">TNO</a>.
+The Netherlands is especially interested in lithography due to the regional importance of <a class="reference external" href="https://www.asml.com">ASML</a>.
+This first system moves a plurality of laser bundles with a thicker prism under an angle, see <a class="reference external" href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>
+The original system is shown below;</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/LDI_systems_ED600px.jpg"><img alt="no scanner showing" class="bg-primary mb-1 align-center" src="../_images/LDI_systems_ED600px.jpg" style="width: 300px;" /></a>
+<p>The patent has a loop hole as claim one specifies a plurality or more than one bundle is moved by a prism.
+Rik Starmans realized a single laser bundle per prism would make the system more cost-effective.
+Luckily, <a class="reference external" href="https://github.com/hzeller/ldgraphy">Henner Zeller</a> had a already developed an open-hardware laser scanner for a rotating mirror.
+This system was used to create a proof of concept version on the <a class="reference external" href="https://github.com/hstarmans/ldgraphy">beaglebone</a>.
+Rik Starmans won 3000 USD in the Hackaday Prize 2019 using the <a class="reference external" href="https://youtu.be/SofTXG5s_MA">system</a>.
+A microcontroller was however seen as too limiting for further development.
+The system therefore moved to <a class="reference external" href="https://github.com/nmigen/nmigen">Nmigen</a> and uses some components from <a class="reference external" href="https://github.com/greatscottgadgets/luna">luna</a>.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -254,7 +262,7 @@ Click on the images to watch the video.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./01_Welcome!"
+            path: "./02_History"
         },
         predefinedOutput: true
     }
@@ -266,8 +274,8 @@ Click on the images to watch the video.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Hexastorm: Open-hardware fast high resolution LASER</a>
-    <a class='right-next' id="next-link" href="../02_History/0_Project_Setup.html" title="next page">History</a>
+    <a class='left-prev' id="prev-link" href="../01_Welcome%21/0_README.html" title="previous page">Welcome!</a>
+    <a class='right-next' id="next-link" href="../03_Links/README.html" title="next page">Links</a>
 
         </div>
         
