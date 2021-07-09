@@ -1,0 +1,29 @@
+{# This simple template derives from ``base.html``. See ``base.html`` for
+   more information about template inheritance. #}
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+
+{# Inside the ``content`` is where you should place most of your own stuff.
+   This will keep scripts at the page end and a navbar you add on later
+   intact. #}
+
+{% block content %}
+
+<div class="container">
+  <div class="text-left">
+    <div class="col-sm-7 center" >
+      <p class="lead"> 
+        <b>Founder:</b> <br>
+        Rik started Hexastorm in May 2017. He has a Master in Applied Physics from the Delft University of Technology
+        and a Master in Management Technology and Economics from the Swiss Federal Institute of Technology.<br>
+        <img alt="<error: cannot load photo Rik Starmans>" src="/static/profile_rikstarmans.jpg" 
+        width=30% class="img-circle"> <br>
+    </div>
+  </div>
+</div>
+{% endblock %}
