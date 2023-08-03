@@ -1,0 +1,47 @@
+# Get Started
+
+Laser modules are not sold. Several videos are made which should enable a user to learn more
+or construct a laser head.
+
+
+## Videos
+
+### Exposure
+
+A succesful exposure is shown in the video below
+
+{{< video https://youtu.be/dR09Tev0cPk >}}
+
+
+### Hardware design
+
+The hardware design is showcased in this video.
+
+{{< video https://youtu.be/B5dpPtdh3tc >}}
+
+
+### Laser prism scanning summary
+
+A summary of laser prism scanning up to 2023 is given below.
+
+{{< video https://youtu.be/b7ArZDhsyfI >}}
+
+
+
+
+## Web resources
+
+A lot of information is available on the web. The user is delegated to these resources to learn more and
+construct a laser head.
+
+* [White paper](https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER)  
+  This paper provides a detailed description of the laser scanner.
+* [Blog](https://hackaday.io/project/21933-open-hardware-fast-high-resolution-laser)  
+  In the Hackaday blog, announcement and new ideas with regard to the project are published
+* [PCB design](https://github.com/hstarmans/firestarter)  
+  This is the repository for the printed circuit board design.
+* [Gateware](https://github.com/hstarmans/hexastorm)  
+  This repository provides the software for controlling the laser.
+* [CAD design](https://github.com/hstarmans/hexastorm_design)  
+  Here the CAD design in FreeCAD is shared.
+

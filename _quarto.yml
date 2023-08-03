@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  favicon: img/hexastormfavicon.webp
+  title: "Hexastorm: Laser prism scanning"
+  navbar:
+    title: false
+    logo: img/hexastormlogo.webp
+    logo-alt: "hexastorm"
+    background: "dark"
+    search: true
+    left:
+      - text: Overview
+        file: index.qmd
+      - text: Get started
+        file: getstarted.qmd
+      - text: History
+        file: history.qmd
+    right:
+      - text: "{{< iconify cib hackaday >}}"
+        href: https://hackaday.io/project/21933-prism-laser-scanner
+      - icon: github
+        href: https://github.com/hstarmans/hexastorm
+        aria-label: GitHub
+
+
+format:
+  html:
+    theme: darkly
+    css: styles.css
+    toc: true

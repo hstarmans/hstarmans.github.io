@@ -1,0 +1,12 @@
+---
+title: "About"
+sidebar:
+style: "docked"
+search: true
+contents:
+    - section: "Introducton"
+      contents:
+        - introduction.qmd
+---
+
+About this site

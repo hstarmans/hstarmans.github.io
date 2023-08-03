@@ -1,0 +1,32 @@
+---
+pagetitle: "Hexastorm"
+page-layout: custom
+section-divs: false
+toc: false
+css: index.css
+editor: source
+description: | 
+  An open open-hardware toolchain for laser direct imaging.
+hide-description: true
+---
+
+::: {.hero-banner}
+
+
+::: {.content-block}
+
+::: {.hero-text} 
+# Welcome to Hexastorm^[®]{.trademark}^ {.mt-1}
+
+### An open-hardware toolchain for laser direct imaging
+
+- Create PCB boards using your own laser direct imager
+- Adopt and customize the laser scanner to your needs
+- Build with Kicad, Freecad, Python and Blender.
+- Combine lasers scanner for **productivity and resolution at all scales**
+
+![](vid/0001.gif){fig-align="center" width=500}
+
+:::
+:::
+:::
