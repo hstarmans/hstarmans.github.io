@@ -1,0 +1,26 @@
+.content-block {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+.hero-banner {
+    position: relative;
+    background-color: rgb(35, 35, 35);
+    display: flex;
+    justify-content: center;
+}
+
+.hero-banner h1 {
+    color: #f1d165;
+    font-size: 1.5rem;
+}
+
+
+.hero-banner .hero-image {
+    position: absolute;
+    display: none;
+    height: auto;
+}
