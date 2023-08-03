@@ -1,1 +1,1 @@
-Sitemap: https://hstarmans.github.io/hexastorm/sitemap.xml
+Sitemap: https://hstarmans.github.io/sitemap.xml
