@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="An open open-hardware toolchain for laser direct imaging.">
+<meta name="description" content="An open-hardware rotating prism laser scanning toolchain for high-speed, high-resolution laser direct imaging (LDI) and additive manufacturing.">
 
-<title>Hexastorm</title>
+<title>Hexastorm - High-Speed Laser Direct Imaging – Hexastorm: Laser prism scanning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,14 +41,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -72,46 +79,50 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./img/hexastormlogo.webp" alt="hexastorm" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Overview</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./getstarted.html" rel="" target="">
- <span class="menu-text">Get started</span></a>
+    <a class="nav-link" href="./getstarted.html"> 
+<span class="menu-text">Get started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./history.html" rel="" target="">
- <span class="menu-text">History</span></a>
+    <a class="nav-link" href="./history.html"> 
+<span class="menu-text">History</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://hackaday.io/project/21933-prism-laser-scanner" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="cib:hackaday"></iconify-icon></span></a>
+    <a class="nav-link" href="https://hackaday.io/project/21933-prism-laser-scanner"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="cib:hackaday" aria-label="Icon hackaday from cib Iconify.design set." title="Icon hackaday from cib Iconify.design set."></iconify-icon></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/hstarmans/hexastorm" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/hstarmans/hexastorm"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -123,23 +134,269 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="hero-banner">
 <div class="content-block">
-<section id="welcome-to-hexastorm" class="mt-1 hero-text">
-<h1 class="mt-1">Welcome to Hexastorm<sup><span class="trademark">®</span></sup></h1>
-<h3 id="an-open-hardware-toolchain-for-laser-direct-imaging">An open-hardware toolchain for laser direct imaging</h3>
-<ul>
-<li>Create PCB boards using your own laser direct imager</li>
-<li>Adopt and customize the laser scanner to your needs</li>
-<li>Build with Kicad, Freecad, Python and Blender.</li>
-<li>Combine lasers scanner for <strong>productivity and resolution at all scales</strong></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="vid/0001.gif" class="img-fluid figure-img" width="500"></p>
-</figure>
+<section id="hexastorm" class="mt-1 hero-text">
+<h1 class="mt-1">Hexastorm</h1>
+<h3 id="high-speed-laser-direct-imaging-for-custom-circuit-boards">High-Speed Laser Direct Imaging for Custom Circuit Boards</h3>
+<div class="badge-container">
+<p><span class="badge-tag">Sub-60 µm Resolution</span> <span class="badge-tag">Up to 34 m/s Scan Speed</span> <span class="badge-tag">CNC 3018 Pro Drop-In Upgrade</span> <span class="badge-tag">Open-Hardware Gateware &amp; Optics</span></p>
+</div>
+<div class="hero-actions">
+<p><a href="#what-is-a-pcb" class="btn-secondary-hex">What is a PCB?</a> <a href="history.html" class="btn-secondary-hex">Read the History</a> <a href="https://hackaday.io/project/21933-prism-laser-scanner" class="btn-secondary-hex" target="_blank">Hackaday Project Logs</a> <a href="getstarted.html" class="btn-secondary-hex">Get Started &amp; Code</a></p>
+</div>
+<div class="hero-media">
+<img src="vid/0001.gif" alt="The Hexastorm Rotating Prism Scanner" style="width: 100%; display: block; margin: 0; padding: 0;">
 </div>
 </section>
+</div>
+</div>
+<div class="content-block">
+<h2 id="what-is-a-pcb">What is a PCB, and Where Does Hexastorm Fit In?</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pcb_sample.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="align-self-center quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Every modern electronic device—from sensors to power electronics—relies on a <strong>Printed Circuit Board (PCB)</strong>: a laminate board patterned with microscopic copper traces connecting chips and discrete components together.</p>
+<p>While commercial fab houses (such as <a href="https://www.pcbway.com/">PCBWay</a>) are the standard for volume multi-layer manufacturing, <strong>Hexastorm brings industrial Laser Direct Imaging (LDI) to your desktop</strong>—eliminating the bottlenecks of rapid prototyping, broken CNC milling bits, and expensive engineering downtime.</p>
+</div>
+</div>
+</div>
+<div class="value-accordion">
+  <details class="value-item">
+    <summary><span class="value-bullet">▸</span> <strong>Rapid R&amp;D Micro-Iterations &amp; Test Coupons</strong></summary>
+    <p>When validating a new RF trace, impedance-matched differential pair, or new IC footprint, you don't need a full production board. You need a simple test coupon <em>right now</em>. Hexastorm patterns custom test tracks in minutes rather than burning an entire week.</p>
+  </details>
+
+  <details class="value-item">
+    <summary><span class="value-bullet">▸</span> <strong>The High Cost of Engineering Downtime (€120+/hr)</strong></summary>
+    <p>R&amp;D hardware and optical engineers cost <strong>€120+ per hour</strong>. Waiting 5–7 days for an overseas shipment just to validate a minor track hypothesis stalls project velocity and burns thousands in engineering overhead. Same-afternoon iteration keeps development momentum alive.</p>
+  </details>
+
+  <details class="value-item">
+    <summary><span class="value-bullet">▸</span> <strong>Exotic &amp; Non-Standard Substrates (Flex, Thick Copper, Curved)</strong></summary>
+    <p>Commercial PCB fabs only accept standard, rigid FR4 panels with predefined copper weights. Hexastorm enables direct digital exposure onto materials commercial fabs reject or charge prohibitive tooling fees for: <strong>flexible polyimide (flex circuits), ultra-thick copper busbars, RF ceramics / PTFE, and non-planar or curved substrates</strong>.</p>
+  </details>
+
+  <details class="value-item">
+    <summary><span class="value-bullet">▸</span> <strong>Non-Contact Laser Precision vs. Fragile CNC Milling</strong></summary>
+    <p>Desktop mechanical isolation milling with 0.1 mm V-bits frequently snaps tools, leaves ragged copper burrs, and cannot reliably machine modern fine-pitch surface-mount IC pads. Hexastorm's focused 405 nm laser spot writes <strong>sub-60 micron</strong> features with zero tool wear and zero mechanical force.</p>
+  </details>
+
+  <details class="value-item">
+    <summary><span class="value-bullet">▸</span> <strong>Accessible Capital with Low Operating Costs</strong></summary>
+    <p>Industrial LDI machines cost upwards of €50,000 to €200,000. Hexastorm packages high-speed rotating prism optics into an accessible drop-in light engine for commodity desktop frames. Once your bench setup is in place, routine in-house test exposures avoid rush fees, minimum order quantities, or proprietary consumable markups.</p>
+  </details>
+</div>
+<h2 id="engineering-overview">Engineering Overview</h2>
+<p>Hexastorm is an open-hardware laser scanning engine engineered for rapid, high-resolution raster exposure in printed circuit board photolithography and photopolymer additive manufacturing.</p>
+<p>By replacing slow Cartesian gantries and delicate galvanometer mirrors with a balanced, high-RPM rotating refractive prism, Hexastorm achieves scanning velocities up to <strong>34 meters per second</strong> while maintaining flat-field linearity and sub-micron repeatability.</p>
+<h2 id="system-specifications">System Specifications</h2>
+<div class="spec-summary-strip">
+<div class="spec-item">
+<p><span class="spec-val">&lt; 60 µm</span> <span class="spec-lbl">Demonstrated Resolution</span></p>
+</div>
+<div class="spec-item">
+<p><span class="spec-val">Up to 34 m/s</span> <span class="spec-lbl">Linear Scan Speed</span></p>
+</div>
+<div class="spec-item">
+<p><span class="spec-val">405 nm / 500 mW</span> <span class="spec-lbl">UV Laser Engine</span></p>
+</div>
+<div class="spec-item">
+<p><span class="spec-val">&lt; 1.0 µm</span> <span class="spec-lbl">Repeatability Jitter</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+View Complete Engineering, Optical &amp; Hardware Specifications (10 Parameters)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="specs-table">
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Specification
+</th>
+<th>
+Notes / Performance Context
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>Optical Wavelength</strong>
+</td>
+<td>
+405 nm
+</td>
+<td>
+Single-mode laser diode for UV photoresist &amp; photopolymer resins
+</td>
+</tr>
+<tr>
+<td>
+<strong>Optical Power</strong>
+</td>
+<td>
+500 mW
+</td>
+<td>
+Modulated via high-speed driver up to 12 MHz
+</td>
+</tr>
+<tr>
+<td>
+<strong>Rotational Speed</strong>
+</td>
+<td>
+3,000 – 21,000 RPM
+</td>
+<td>
+Driven by custom planar PCB / brushless motor with closed-loop sync
+</td>
+</tr>
+<tr>
+<td>
+<strong>Linear Scan Speed</strong>
+</td>
+<td>
+Up to 34 m/s
+</td>
+<td>
+At 21,000 RPM across substrate plane (3,000 RPM practical baseline)
+</td>
+</tr>
+<tr>
+<td>
+<strong>Demonstrated Resolution</strong>
+</td>
+<td>
+&lt; 60 µm
+</td>
+<td>
+Single-facet exposure tests on UV solar photo paper
+</td>
+</tr>
+<tr>
+<td>
+<strong>Optical Spot Size (FWHM)</strong>
+</td>
+<td>
+~25 – 40 µm
+</td>
+<td>
+Circularized focal spot at target plane
+</td>
+</tr>
+<tr>
+<td>
+<strong>Repeatability (Jitter)</strong>
+</td>
+<td>
+&lt; 1.0 µm std dev
+</td>
+<td>
+Sub-micron orthogonal and in-scan positional stability
+</td>
+</tr>
+<tr>
+<td>
+<strong>Control Architecture</strong>
+</td>
+<td>
+Lattice iCE40UP5K + ESP32-S3
+</td>
+<td>
+FPGA microsecond raster gateware + Wi-Fi / motion control
+</td>
+</tr>
+<tr>
+<td>
+<strong>Hardware Target</strong>
+</td>
+<td>
+CNC 3018 Pro Drop-In
+</td>
+<td>
+Unified 4-layer control board replacing stock 3018 electronics
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="verified-physical-exposure-results">Verified Physical Exposure Results</h2>
+<p>The imaging capabilities of the rotating prism engine have been characterized by translating digital lane slices directly into physical raster exposures on photosensitive substrates.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="image-showcase quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/slice_lanes_preview.png" class="img-fluid"></p>
+<div class="image-caption">
+<p><strong>Software Toolchain:</strong> Multi-lane slice preview generated by Hexastorm, dividing vector artwork into parallel high-speed raster scan lanes with registration markers.</p>
+</div>
+</div>
+<div class="image-showcase quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/exposure_uv_paper_60um.jpg" class="img-fluid"></p>
+<div class="image-caption">
+<p><strong>Physical Exposure:</strong> Single-facet raster exposure test on UV solar photo paper, resolving crisp <strong>sub-60 micron</strong> features. <em>(Note: Small stitching variations visible across lane boundaries stem from Cartesian CNC stage backlash and mechanical lead-screw tolerances—not the light engine itself, which consistently delivers cycle-accurate spot placement and sharp optical focus across every sweep).</em></p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="recent-breakthroughs">Recent Breakthroughs</h2>
+<div class="card-grid">
+<section id="deterministic-gateware-debounce" class="feature-card">
+<h4>Deterministic Gateware Debounce</h4>
+<p>By developing custom Amaranth HDL gateware (<a href="https://github.com/hstarmans/hexastorm/blob/master/src/hexastorm/blocks/photodiode_debounce.py"><code>photodiode_debounce.py</code></a>), electrical noise and optical ringing on the sync photodiode are completely eliminated. This provides cycle-accurate, sub-microsecond timing baselines on every revolution.</p>
+</section>
+<section id="sub-micron-opencv-metrology" class="feature-card">
+<h4>Sub-Micron OpenCV Metrology</h4>
+<p>During bench calibration with a stationary global shutter sensor (OV2311), custom OpenCV algorithms quantify orthogonal tilt and in-scan timing jitter across 10 consecutive sweeps per facet, delivering sub-micron standard deviations (0.25–0.8 µm orthogonal, 0.47–1.0 µm in-scan).</p>
+</section>
+<section id="drop-in-cnc-3018-pro-integration" class="feature-card">
+<h4>Drop-In CNC 3018 Pro Integration</h4>
+<p>To eliminate the barrier of custom mechanical chassis, the 2026 electronics are integrated into a single 4-layer PCB (<a href="https://github.com/hstarmans/firestarter">Firestarter</a>). It drops directly into the standard enclosure of the widely available CNC 3018 Pro desktop machine, retaining its power supply, frame, and cabling.</p>
+</section>
+<section id="end-to-end-open-toolchain" class="feature-card">
+<h4>End-to-End Open Toolchain</h4>
+<p>From KiCad SVG vector imports and FPGA gateware to Python optical simulation in <a href="https://github.com/pyoptools/pyoptools">pyoptools</a> and <a href="https://github.com/hexastorm/opticaldesign">opticaldesign</a>, every layer of the hardware and software stack is fully documented and open.</p>
+</section>
+</div>
+<h2 id="manufacturing-support">Manufacturing &amp; Support</h2>
+<div class="partner-banner">
+<div class="partner-brand">
+<p><a href="https://www.pcbway.com/" target="_blank" rel="noopener noreferrer"> <img src="img/pcbway_logo.svg" alt="PCBWay Logo" class="partner-logo"> </a></p>
+<section id="fabricated-with-support-from-pcbway" class="partner-text">
+<h5>Fabricated with Support from PCBWay</h5>
+<p>The unified 4-layer <strong>Firestarter</strong> control board (combining the ESP32-S3, Lattice iCE40UP5K FPGA, TMC2209 silent stepper drivers, and 24V power tree onto an 88 × 70 mm footprint) was manufactured and sponsored by <a href="https://www.pcbway.com/">PCBWay</a>.</p>
+</section>
+</div>
+<p><a href="https://www.pcbway.com/" class="btn-secondary-hex" target="_blank">Visit PCBWay</a></p>
 </div>
 </div>
 
@@ -181,18 +438,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -224,11 +470,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/hexastorm\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -238,8 +523,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -251,7 +545,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -295,6 +712,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -320,6 +738,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -380,6 +824,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

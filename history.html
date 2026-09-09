@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hexastorm: Laser prism scanning – history</title>
+<title>history – Hexastorm: Laser prism scanning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,14 +40,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,12 +62,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -70,46 +106,50 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./img/hexastormlogo.webp" alt="hexastorm" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Overview</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./getstarted.html" rel="" target="">
- <span class="menu-text">Get started</span></a>
+    <a class="nav-link" href="./getstarted.html"> 
+<span class="menu-text">Get started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./history.html" rel="" target="" aria-current="page">
- <span class="menu-text">History</span></a>
+    <a class="nav-link active" href="./history.html" aria-current="page"> 
+<span class="menu-text">History</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://hackaday.io/project/21933-prism-laser-scanner" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="cib:hackaday"></iconify-icon></span></a>
+    <a class="nav-link" href="https://hackaday.io/project/21933-prism-laser-scanner"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="cib:hackaday" aria-label="Icon hackaday from cib Iconify.design set." title="Icon hackaday from cib Iconify.design set."></iconify-icon></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/hstarmans/hexastorm" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/hstarmans/hexastorm"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -124,8 +164,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#history" id="toc-history" class="nav-link active" data-scroll-target="#history">History</a>
   <ul class="collapse">
-  <li><a href="#hexastorm" id="toc-hexastorm" class="nav-link" data-scroll-target="#hexastorm">Hexastorm</a></li>
-  <li><a href="#amsystems" id="toc-amsystems" class="nav-link" data-scroll-target="#amsystems">AMSystems</a></li>
+  <li><a href="#origins-at-tno-20132017" id="toc-origins-at-tno-20132017" class="nav-link" data-scroll-target="#origins-at-tno-20132017">Origins at TNO (2013–2017)</a>
+  <ul class="collapse">
+  <li><a href="#the-hexastorm-thesis-single-beams-modular-arrays" id="toc-the-hexastorm-thesis-single-beams-modular-arrays" class="nav-link" data-scroll-target="#the-hexastorm-thesis-single-beams-modular-arrays">The Hexastorm Thesis: Single Beams &amp; Modular Arrays</a></li>
+  </ul></li>
+  <li><a href="#hexastorm-the-open-hardware-journey" id="toc-hexastorm-the-open-hardware-journey" class="nav-link" data-scroll-target="#hexastorm-the-open-hardware-journey">Hexastorm: The Open-Hardware Journey</a>
+  <ul class="collapse">
+  <li><a href="#anti-patent-shield-early-prototyping-20172019" id="toc-anti-patent-shield-early-prototyping-20172019" class="nav-link" data-scroll-target="#anti-patent-shield-early-prototyping-20172019">Anti-Patent Shield &amp; Early Prototyping (2017–2019)</a></li>
+  <li><a href="#transition-to-fpga-gateware-20212022" id="toc-transition-to-fpga-gateware-20212022" class="nav-link" data-scroll-target="#transition-to-fpga-gateware-20212022">Transition to FPGA Gateware (2021–2022)</a></li>
+  <li><a href="#the-carl-bugeja-pcb-motor-experiment-2023" id="toc-the-carl-bugeja-pcb-motor-experiment-2023" class="nav-link" data-scroll-target="#the-carl-bugeja-pcb-motor-experiment-2023">The Carl Bugeja PCB Motor Experiment (2023)</a></li>
+  <li><a href="#the-turning-point-photodiode-debounce-in-gateware" id="toc-the-turning-point-photodiode-debounce-in-gateware" class="nav-link" data-scroll-target="#the-turning-point-photodiode-debounce-in-gateware">The Turning Point: Photodiode Debounce in Gateware</a></li>
+  <li><a href="#taming-facet-aberrations-with-computer-vision-2025" id="toc-taming-facet-aberrations-with-computer-vision-2025" class="nav-link" data-scroll-target="#taming-facet-aberrations-with-computer-vision-2025">Taming Facet Aberrations with Computer Vision (2025)</a></li>
+  <li><a href="#drop-in-cnc-3018-pro-architecture-2026" id="toc-drop-in-cnc-3018-pro-architecture-2026" class="nav-link" data-scroll-target="#drop-in-cnc-3018-pro-architecture-2026">Drop-In CNC 3018 Pro Architecture (2026)</a></li>
+  <li><a href="#the-solo-deep-tech-reality-ai-velocity" id="toc-the-solo-deep-tech-reality-ai-velocity" class="nav-link" data-scroll-target="#the-solo-deep-tech-reality-ai-velocity">The Solo Deep-Tech Reality &amp; AI Velocity</a></li>
+  </ul></li>
+  <li><a href="#parallel-path-amsystems-atum-systems" id="toc-parallel-path-amsystems-atum-systems" class="nav-link" data-scroll-target="#parallel-path-amsystems-atum-systems">Parallel Path: AMSystems &amp; Atum Systems</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -135,28 +188,231 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <section id="history" class="level1">
 <h1>History</h1>
-<p>The project started in 2013 when <a href="https://tno.nl">TNO</a> researches alternative approaches for printed circuit board lithography. TNO is the most prominent government research institute in the Netherlands. The Netherlands is interested in lithography due to the regional importance of <a href="https://asml.com">ASML</a>. Once a laser is focussed on a small spot it must be moved fast to expose a plane. The laser can be moved by mirrors or prisms. Rotating prisms have a lower cross-scan error and enable simpler optics than rotating mirrors which require a f-theta lens. The disadvantages of alternative exposure technologies are outlined by me on <a href="https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER">Reprap</a>. Around 2013, Erwin van Zwet suggests using a prism to move a laser bundle with a sweeping motion, similar to a galvo mirror. Dr.&nbsp;Jacobus Jamar improves to the idea by outlining the benefits of rotating the prism and using multiple lasers. This first system moves multiple laser bundles with a thicker prism under an angle, see <a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>. The engine is shown below. This version is inspired by Kleo LDI developed by Carl Zeiss and now owned by <a href="https://www.manz.com/ecomaXL/files/Manz_product-brochure_PLI400_EN.pdf">Manz</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+⏱️ The Hexastorm Journey at a Glance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Era</th>
+<th style="text-align: left;">Milestone</th>
+<th style="text-align: left;">Technical Breakthrough</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>2013</strong></td>
+<td style="text-align: left;"><strong>Origins at TNO</strong></td>
+<td style="text-align: left;">Multi-beam prism conceived for PCB lithography (<a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>), but constrained by fiber bundling and acoustic siren drag.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2017</strong></td>
+<td style="text-align: left;"><strong>The Open-Hardware Pivot</strong></td>
+<td style="text-align: left;">Rik Starmans (co-inventor) confirms single-beam freedom to operate, founding Hexastorm as an unencumbered open-hardware platform.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>2019</strong></td>
+<td style="text-align: left;"><strong>Hackaday Prize Finalist</strong></td>
+<td style="text-align: left;">While working as an optical scientist at <a href="https://www.nts-group.nl/">NTS Optel</a>, Rik built a working Beaglebone prototype at home, demonstrating <a href="https://youtu.be/SofTXG5s_MA">live raster exposure</a> and winning a Hackaday Prize award.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2021–2023</strong></td>
+<td style="text-align: left;"><strong>FPGA &amp; Planar PCB Motors</strong></td>
+<td style="text-align: left;">Migrated core to cycle-accurate <a href="https://amaranth-lang.org/">Amaranth HDL</a>; proved a flat PCB stator can directly spin an ultra-thin 2 mm quartz polygon.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>2025</strong></td>
+<td style="text-align: left;"><strong>Sub-60 µm Precision</strong></td>
+<td style="text-align: left;">Deterministic photodiode debounce and computer vision calibration break the <strong>sub-60 micron resolution</strong> barrier on photo paper.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2026</strong></td>
+<td style="text-align: left;"><strong>CNC 3018 Desktop Integration</strong></td>
+<td style="text-align: left;">Unified into the 4-layer <a href="https://github.com/hstarmans/firestarter">Firestarter</a> board (sponsored by PCBWay) as a plug-and-play LDI drop-in for standard CNC 3018 frames.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="origins-at-tno-20132017" class="level2">
+<h2 class="anchored" data-anchor-id="origins-at-tno-20132017">Origins at TNO (2013–2017)</h2>
+<p>The project started in 2013 when <a href="https://tno.nl">TNO</a> researched alternative approaches for printed circuit board lithography. TNO is the prominent national research institute in the Netherlands, located in the heart of the Dutch high-tech ecosystem centered around <a href="https://asml.com">ASML</a>.</p>
+<p>Once a laser is focused to a microscopic spot, it must be swept rapidly to expose a plane. The beam can be deflected by mirrors or prisms:</p>
+<ul>
+<li><strong>Rotating prisms</strong> exhibit significantly lower cross-scan error and enable simpler, flat-field optics without requiring expensive f-theta scan lenses (detailed in the <a href="https://github.com/hexastorm/opticaldesign">Hexastorm optical design repository</a>).</li>
+<li><strong>Galvanometers and polygon mirrors</strong> suffer from mechanical inertia, non-linear velocity profiles, or severe optical distortions.</li>
+</ul>
+<p>Around 2013, Erwin van Zwet suggested using a prism in an oscillating sweeping motion, similar to a galvo mirror. Dr.&nbsp;Jacobus Jamar improved on the concept by proposing a continuously rotating prism combined with multiple laser beams under an angle, resulting in TNO patent <a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a> (and <a href="https://patents.google.com/patent/WO2015160252A1">WO2015160252A1</a>). This multi-beam concept was inspired by the earlier Kleo LDI system originally developed by <a href="https://www.zeiss.com">Carl Zeiss</a> (patented under <a href="https://patents.google.com/patent/US8314921B2">US8314921B2</a>), later acquired by <a href="https://www.manz.com/">Manz</a> (whose engineering assets and facilities were acquired by <a href="https://www.tesla.com/">Tesla</a> Automation in 2025).</p>
+<p>The patent was split into two separate commercial applications: printed circuit board lithography and 3D printing. With TNO support, Peter Brier and Wilma Koolen founded LDI Systems to pursue PCB lithography. However, the company struggled to commercialize the complex multi-beam setup and ceased independent operations.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/plurality.jpg" class="img-fluid figure-img" width="500"></p>
+<p><img src="img/plurality.jpg" class="img-fluid figure-img"></p>
+<figcaption>TNO multi-beam prism concept (<a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>)</figcaption>
 </figure>
 </div>
-<p>The patent is split into two application areas; printed circuit board manufacturing and 3D printing. With the support of TNO, Peter Brier and Wilma Koolen found LDI Systems for printed circuit board manufacturing and fail.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/LDI_systems_ED600px.jpg" class="img-fluid figure-img" width="500"></p>
+<p><img src="img/LDI_systems_ED600px.jpg" class="img-fluid figure-img"></p>
+<figcaption>Peter Brier and Wilma Koolen of LDI Systems (<em>Eindhovens Dagblad</em>, 2015)</figcaption>
 </figure>
 </div>
-<p>LDI Systems gets acquired by <a href="https://www.innovationindustries.com/">Innovation Industries</a>. Rik Starmans starts working at TNO around 2014. It is very challening to build the system with multiple lasers and get these aligned. As a result, Rik suggests a single laser bundle per prism variant. This is easier and does not fall under the patent. Due to differences, Rik leaves TNO in 2017. Development of laser prism scanning is thus split over two groups; Hexastorm and AMSystems.</p>
-<section id="hexastorm" class="level2">
-<h2 class="anchored" data-anchor-id="hexastorm">Hexastorm</h2>
-<p>Rik Starmans starts a Kickstarter campaign and publishes a <a href="https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER">white paper</a> as an anti-patent shield. The campaign fails. Hexastorm receives help from <a href="https://www.felixprinters.com/">Felixprinters</a> which provides office space and a frame to place the laser scanner on. I have a prototype but can’t fix the electronics and start working at <a href="https://verint.com">Verint</a>. The collaboration with Felixprinters ends. After a year and via Verint, I meet an electronics engineer from Italy (Maurizio Spoto) and he builds the first electronic design for 400 USD. I start a blog on <a href="https://hackaday.io/project/21933-prism-laser-scanner">Hackaday</a>. Using the code of <a href="https://github.com/hzeller/ldgraphy">Henner Zeller</a>, I succeed in getting a working prototype with a Beaglebone. I get it working in the lab of the <a href="https://youtu.be/SofTXG5s_MA">NTS-group</a>. Recognition increases, and I win 3000 USD in the Hackaday Prize 2019 using the system. I change the electronics from microcontrollers, the Beaglebone, to FPGA in July 2021. The code is based upon Amaranth HDL and uses some components from luna. I create a printed circuit board in <a href="https://www.youtube.com/watch?v=dR09Tev0cPk">2022</a>. In <a href="https://hackaday.com/2023/02/22/laser-scanner-upgraded-to-use-pcb-motor/">2023</a>, I show a laser scanner which uses a printed circuit board motor to move the prism.</p>
+</div>
+</div>
+</div>
+<p>LDI Systems and its patent assets were absorbed by <a href="https://www.innovationindustries.com/">Innovation Industries</a>, the prominent Dutch deep-tech venture fund (widely known for backing <a href="https://www.nearfieldinstruments.com/">Nearfield Instruments</a>, an AFM semiconductor inspection unicorn).</p>
+<p>This corporate history created an important strategic divergence:</p>
+<ul>
+<li><strong>Why Atum Systems cannot pursue PCBs</strong>: Because the original multi-laser patent’s (<a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>) PCB rights were tied up in the absorbed LDI Systems entity, TNO’s subsequent spin-off (AMSystems, now merged into Atum Systems) was strictly confined to 3D printing.</li>
+<li><strong>Hexastorm’s Freedom to Operate &amp; Co-Inventor Background</strong>: Rik Starmans joined TNO around 2014 and is himself listed as a co-inventor on TNO’s patent family (<a href="https://patents.google.com/patent/WO2015160252A1">WO2015160252A1</a> / <a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>). Experiencing first-hand that aligning multiple laser beams through a single rotating prism was an intractable engineering bottleneck, Rik proposed simplifying to a single-beam-per-prism architecture.</li>
+<li><strong>The 2017 Legal Certainty</strong>: When the US patent application text was officially published in February 2017 (<a href="https://patents.google.com/patent/US20170038690A1">US20170038690A1</a>), its examination claims were strictly restricted to a <em>plurality</em> of beams through the transmissive element (single-beam prism scanning was already established public-domain prior art by Lindberg in 1966, <a href="https://patents.google.com/patent/US3253498">US3253498</a>). This provided definitive legal confirmation that Hexastorm’s single-beam system had 100% freedom to operate for <strong>high-speed PCB photolithography</strong>.</li>
+<li><strong>Patents as Public Funding Vehicles</strong>: In institutional environments, keeping such complex multi-beam patents alive is often driven by securing Dutch and European innovation grants and regional venture subsidies (NWO, BOM, and EU frameworks) under the badge of a “unique patent portfolio,” rather than serving as a cost-effective manufacturing platform.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Deep Dive: The Physics of Multi-Beam Prisms (Tilt Dilemma, Fiber Bundling &amp; Aero-Acoustics)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the multi-beam concept originally developed for reflective polygon mirrors by <a href="https://www.zeiss.com">Carl Zeiss</a> / Kleo LDI (patent <a href="https://patents.google.com/patent/US8314921B2">US8314921B2</a>) and later adapted to refractive prisms by TNO (patent <a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>), multiple laser diodes enter along the length of a single rotating optical element.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/prism_tilt_explanation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+<p>Looking from the top view, the rotating prism appears as a long rectangle spanning the substrate:</p>
+<ul>
+<li><strong>Why an Untilted Prism Fails (Left)</strong>: If the prism axis is aligned parallel to the substrate feed, each laser sweeps along the exact same transverse track. As the substrate advances, all laser lines sweep over the same narrow strip—100% redundant overlap, producing no increase in exposure swath.</li>
+<li><strong>Why the Prism Must Be Tilted (Right)</strong>: Tilting the prism relative to the substrate movement staggers the scan lines. As shown in the diagram, each laser diode now exposes a distinct unique zone across the moving substrate, with a calibrated overlap zone between adjacent lanes to ensure seamless stitching without gaps. This multiplies the total exposed swath.</li>
+</ul>
+<section id="the-laser-diode-spacing-dilemma-fiber-bundling" class="level4">
+<h4 class="anchored" data-anchor-id="the-laser-diode-spacing-dilemma-fiber-bundling">The Laser Diode Spacing Dilemma &amp; Fiber Bundling</h4>
+<p>To stitch adjacent scan lines seamlessly on a moving substrate, the laser diode spacing must match the effective scan length minus the overlap. In multi-beam systems like TNO’s prototypes, typical scan line lengths were around <strong>8 mm</strong> with an intentional lane overlap of approximately <strong>2 mm</strong>.</p>
+<p>Geometrically, at an ideal 45° tilt angle, the physical separation between adjacent laser diodes cannot exceed the scan line length (<span class="math inline">\(S_{\text{laser}} \le S_{\text{scan}}\)</span>). In commercial systems like the Manz Speedlight 2D (implementing the Zeiss/Kleo multi-beam patent <a href="https://patents.google.com/patent/US8314921B2">US8314921B2</a>), peripheral lens distortions and telecentric exit constraints forced the tilt angle <strong>below 45°</strong> (<span class="math inline">\(\alpha &lt; 45^\circ\)</span>), requiring laser diodes to be packed even closer together than the scan line length.</p>
+<p>Because standard packaged laser diodes (with collimators, anamorphic optics, and heat sinks) cannot physically fit that close together along a glass cylinder, systems like Kleo LDI were forced into <strong>optical fiber bundling</strong>. While technically functional, fiber coupling drastically inflated production costs, introduced optical insertion losses, and compounded assembly fragility.</p>
+<p><em>(For the complete mathematical proof and trigonometric derivations, see the <a href="https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER#Polygon_tilt_angle">foundational RepRap white paper</a> and the <a href="https://github.com/hexastorm/opticaldesign">Hexastorm opticaldesign analytical model</a>).</em></p>
 </section>
-<section id="amsystems" class="level2">
-<h2 class="anchored" data-anchor-id="amsystems">AMSystems</h2>
-<p>At TNO, the laser scanner with multiple lasers is used but development is put on hold. Around 2019, TNO decides to create a new company, <a href="https://www.amsystems.nl/">AMSystems</a> which uses the technology for 3D printing. Money is raised via <a href="https://www.nwo.nl/">NWO</a>, a state fund via a loan of 250K euro’s in 2021. In 2022, AM Systems receives a subsidy of 50K for the development of a recoater. In <a href="https://www.amsystems.nl/products">2023</a> AMsystems receives a 150K loan from <a href="https://rabobank.com">Rabobank</a>. So far, AMSystems has not shown it solved the problems I faced while working with the system.</p>
+<section id="the-aero-acoustic-inertia-trap" class="level4">
+<h4 class="anchored" data-anchor-id="the-aero-acoustic-inertia-trap">The Aero-Acoustic &amp; Inertia Trap</h4>
+<p>For <span class="math inline">\(N\)</span> laser bundles, the prism must grow substantially in axial length. This creates compounding mechanical and aerodynamic penalties:</p>
+<ul>
+<li><strong>Atmospheric Siren Noise vs.&nbsp;Cleanroom Vacuum Pumps</strong>: Cleanroom turbomolecular pumps spin silently at 30,000–90,000 RPM because they operate in high vacuum (<span class="math inline">\(&lt; 10^{-3}\text{ mbar}\)</span>) with zero air resistance. In atmospheric air, however, a thick multi-beam prism acts as an <strong>acoustic siren</strong>: its rotating facets continuously chop and displace air, generating loud blade-pass siren noise and severe turbulence.</li>
+<li><strong>Windage Drag</strong>: Aerodynamic drag power scales directly with axial length and the cube of rotational speed (<span class="math inline">\(P_{\text{drag}} \propto L \cdot \omega^3\)</span>). Spinning a thick, elongated glass cylinder consumes significant drive power and dumps friction heat directly into the optomechanics, triggering thermal drift.</li>
+<li><strong>Rotational Inertia &amp; Multi-Plane Balancing</strong>: Added mass multiplies the moment of inertia (<span class="math inline">\(I = \frac{1}{2} m r^2\)</span>), demanding heavy spindle motors. Furthermore, an elongated glass cylinder is a 3D rigid rotor: any mass eccentricity between opposite ends causes dynamic couple unbalance (gyroscopic wobbling), requiring complex multi-plane dynamic balancing machines.</li>
+</ul>
+<p>Despite having a working platform, backing from <a href="https://www.zeiss.com">Carl Zeiss</a> and Manz, and substantial German government (<a href="https://en.wikipedia.org/wiki/Federal_Ministry_of_Education_and_Research_(Germany)">BMBF</a>) innovation subsidies, the multi-beam Speedlight 2D struggled commercially against established <a href="https://en.wikipedia.org/wiki/Digital_micromirror_device">DMD</a> and galvo platforms. The extreme cost of multi-channel fiber bundling, thermal drift, and the acoustic/mechanical complexity of spinning a heavy multi-beam cylinder proved too difficult to commercialize.</p>
+</section>
+</div>
+</div>
+</div>
+<section id="the-hexastorm-thesis-single-beams-modular-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="the-hexastorm-thesis-single-beams-modular-arrays">The Hexastorm Thesis: Single Beams &amp; Modular Arrays</h3>
+<p>Rather than wrestling with the compounding penalties of a tilted multi-beam prism, Hexastorm was founded on a lean, modular architecture:</p>
+<ol type="1">
+<li><p><strong>100% Optical Efficiency (90° Static Tilt)</strong>:<br>
+Because each Hexastorm module contains only a single beam, there is no line-overlap dilemma. Each module operates at the optimal <strong>90° static tilt angle</strong> relative to substrate feed: <span class="math display">\[\alpha = 90^\circ \implies \sin(90^\circ) = 1.0\]</span> <strong>100% of the optical scan length is converted directly into useful exposure swath</strong>, eliminating the trigonometric cosine/sine projection loss entirely.<br>
+<em>(Fun Fact: While the scan head is mounted at a nominal 90° static angle, the actual line traced across a continuously moving substrate is tilted by a fraction of a degree due to the substrate’s continuous forward feed. The Hexastorm slicer mathematically compensates for this dynamic motion skew so exposed lines remain perfectly perpendicular).</em></p></li>
+<li><p><strong>Whisper-Quiet 2 mm Prism &amp; Minimal Air Displacement</strong>:<br>
+Hexastorm uses a 30 × 30 mm quartz polygon just <strong>2 mm thick</strong> (typical scan length 8 mm, maximum 24 mm). Slicing through the air with an ultra-thin 2 mm cross-section, it displaces negligible air, generates virtually zero windage turbulence, and runs whisper-quiet without requiring sealed enclosures.</p></li>
+<li><p><strong>Ultra-Low Inertia, Flat Disc Dynamics &amp; Practical 3,000 RPM Operation</strong>:<br>
+Weighing only a few grams with negligible axial length (<span class="math inline">\(L \ll D\)</span>), the 2 mm prism behaves as a flat disc—completely eliminating dynamic couple wobble. In fact, current Hexastorm prototypes run reliably at <strong>3,000 RPM completely unbalanced</strong>. Spinning at tens of thousands of RPM is rarely needed in practice: real-world scanning speeds are ultimately constrained by <strong>photoresist chemistry</strong> (the radiant energy dose required to fully polymerize standard photoresists). 3,000 RPM provides the optimal exposure energy density while allowing the featherweight rotor to be driven directly by a flat <strong>planar PCB motor</strong> (stator traces etched directly into standard FR4 copper), slashing motor manufacturing costs to pennies.</p></li>
+<li><p><strong>The Single-Laser Market is Far Larger</strong>:<br>
+Across optical scanning history—from polygon laser printers and barcode scanners to LiDAR—single-beam systems represent the vast majority of all deployed units. They are mechanically balanced, simple to collimate, cost-effective, and immune to inter-channel thermal drift.</p></li>
+<li><p><strong>Scaling Through Modular Plurality</strong>:<br>
+When wide substrates or high industrial throughput are needed, high throughput is achieved by <strong>arraying multiple independent single-beam Hexastorm modules side-by-side in a staggered configuration</strong>:</p>
+<ul>
+<li><strong>100% Freedom to Operate</strong>: Arraying separate single-beam scanners completely sidesteps TNO’s patent <a href="https://patents.google.com/patent/US10114289B2">US10114289B2</a>, which specifically claims multiple beams entering a <em>single</em> common prism. Single-beam rotating prism scanning builds upon prior art dating back to Lindberg’s 1966 patent <a href="https://patents.google.com/patent/US3253498">US3253498</a>, ensuring unencumbered open-hardware operation.</li>
+<li><strong>Resilience</strong>: Each module has its own balanced motor, prism, and autonomous timing calibration. If one module needs service, it is quickly swapped without scrapping an entire optical engine.</li>
+<li><strong>Linear Scalability</strong>: A single module drives a desktop PCB prototyping tool (such as on a CNC 3018 frame), while an array of synchronized modules easily scales across wide-format industrial roll-to-roll production lines.</li>
+</ul></li>
+</ol>
+<p>Due to differing visions, Rik left TNO in 2017. Development of rotating prism scanning subsequently diverged into two paths: <strong>Hexastorm</strong> (open-hardware, single-beam, targeting PCB lithography) and <strong>AMSystems / Atum Systems</strong> (institutional spin-off, multi-beam, restricted to 3D printing).</p>
+</section>
+</section>
+<section id="hexastorm-the-open-hardware-journey" class="level2">
+<h2 class="anchored" data-anchor-id="hexastorm-the-open-hardware-journey">Hexastorm: The Open-Hardware Journey</h2>
+<section id="anti-patent-shield-early-prototyping-20172019" class="level3">
+<h3 class="anchored" data-anchor-id="anti-patent-shield-early-prototyping-20172019">Anti-Patent Shield &amp; Early Prototyping (2017–2019)</h3>
+<p>Rik Starmans launched a Kickstarter campaign and published a foundational <a href="https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER">white paper on RepRap</a> to establish prior art and act as an open anti-patent shield.</p>
+<p><a href="https://www.felixprinters.com/">Felixprinters</a> provided office space and a 3D printer frame for early experiments. While working at <a href="https://verint.com">Verint</a>, Rik collaborated with Italian electronics engineer Maurizio Spoto to build the first custom control board.</p>
+<p>A dedicated development blog was launched on <a href="https://hackaday.io/project/21933-prism-laser-scanner">Hackaday</a>. While working as an optical scientist at <a href="https://www.nts-group.nl/">NTS Optel</a> (the specialized optical engineering division of the <a href="https://www.nts-group.nl/">NTS Group</a>), Rik developed the prototype at home. Adapting the open-source raster code from <a href="https://github.com/hzeller/ldgraphy">Henner Zeller’s LDGraphy</a>, Rik achieved a working system using a Beaglebone, demonstrating <a href="https://youtu.be/SofTXG5s_MA">live raster exposure</a>. In 2019, the project was recognized as a <strong>Hackaday Prize Finalist</strong>, winning a $3,000 grant.</p>
+</section>
+<section id="transition-to-fpga-gateware-20212022" class="level3">
+<h3 class="anchored" data-anchor-id="transition-to-fpga-gateware-20212022">Transition to FPGA Gateware (2021–2022)</h3>
+<p>Microcontrollers struggled to maintain deterministic sub-microsecond laser modulation at high scanning RPM. In July 2021, the digital core was migrated to an FPGA architecture using <a href="https://amaranth-lang.org/">Amaranth HDL</a> and components from the <a href="https://github.com/greatscottgadgets/luna">LUNA</a> ecosystem. A new custom PCB was developed in <a href="https://www.youtube.com/watch?v=dR09Tev0cPk">2022</a> to interface the FPGA with high-speed laser drivers.</p>
+</section>
+<section id="the-carl-bugeja-pcb-motor-experiment-2023" class="level3">
+<h3 class="anchored" data-anchor-id="the-carl-bugeja-pcb-motor-experiment-2023">The Carl Bugeja PCB Motor Experiment (2023)</h3>
+<p>In 2023, Hexastorm integrated a planar PCB motor inspired by <a href="https://carlbugeja.com/">Carl Bugeja’s</a> open hardware work. Designing and tuning this motor took a substantial engineering effort, but successfully proved that a compact, flat PCB stator could rotate the optical prism directly:</p>
+<ul>
+<li>Read the popular project log: <a href="https://hackaday.io/project/21933-prism-laser-scanner/log/226561-laser-direct-imaging-using-a-pcb-motor">Laser Direct Imaging using a PCB motor</a>.</li>
+<li>Watch the exposure demonstration: <a href="https://youtu.be/OYGHlajLw4s">YouTube Video: Exposure with PCB motor</a>.</li>
+</ul>
+</section>
+<section id="the-turning-point-photodiode-debounce-in-gateware" class="level3">
+<h3 class="anchored" data-anchor-id="the-turning-point-photodiode-debounce-in-gateware">The Turning Point: Photodiode Debounce in Gateware</h3>
+<p>The single breakthrough that truly unlocked high precision was resolving signal integrity on the optical synchronization sensor. Because the laser bundle sweeps across a high-speed photodiode to timestamp each rotation, electrical noise and optical ringing caused false triggers and jitter.</p>
+<p>Developing the deterministic <a href="https://github.com/hstarmans/hexastorm/blob/master/src/hexastorm/blocks/photodiode_debounce.py"><code>photodiode_debounce.py</code></a> gateware module in <a href="https://amaranth-lang.org/">Amaranth HDL</a> completely eliminated false edges. This provided rock-solid, cycle-accurate timing baselines on every revolution.</p>
+</section>
+<section id="taming-facet-aberrations-with-computer-vision-2025" class="level3">
+<h3 class="anchored" data-anchor-id="taming-facet-aberrations-with-computer-vision-2025">Taming Facet Aberrations with Computer Vision (2025)</h3>
+<p>With stable photodiode timing in place, the next hurdle was optical facet imperfections: no two faces of a glass prism are perfectly parallel or planar at sub-micron scales.</p>
+<p>Using an OV2311 global shutter camera, OpenCV algorithms characterized the sub-micron orthogonal tilt (0.25–0.8 µm) and in-scan timing jitter of every facet across multiple sweeps. Anchoring calibration against a virtual “median average reference” facet allowed all four facets to be utilized seamlessly without optical distortions. Physical raster exposures on UV solar photo paper confirmed the result: sharp, repeatable lines resolving down to <strong>sub-60 micron resolution</strong>.</p>
+<ul>
+<li>Read the technical breakdown: <a href="https://hackaday.io/project/21933-prism-laser-scanner/log/245340-taming-a-prism-scanner-with-computer-vision">Taming a prism Scanner with Computer Vision</a>.</li>
+</ul>
+</section>
+<section id="drop-in-cnc-3018-pro-architecture-2026" class="level3">
+<h3 class="anchored" data-anchor-id="drop-in-cnc-3018-pro-architecture-2026">Drop-In CNC 3018 Pro Architecture (2026)</h3>
+<p>To eliminate custom mechanical builds, the electronics were unified into a single 4-layer PCB (<a href="https://github.com/hstarmans/firestarter">Firestarter</a>), manufactured and sponsored by <a href="https://www.pcbway.com/">PCBWay</a>. The board replaces the stock controller of the common Vevor CNC 3018 Pro desktop machine, retaining its stock frame, cabling, and 24V power supply while adding silent TMC2209 drivers and camera alignment.</p>
+</section>
+<section id="the-solo-deep-tech-reality-ai-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="the-solo-deep-tech-reality-ai-velocity">The Solo Deep-Tech Reality &amp; AI Velocity</h3>
+<p>Developing a precision laser direct imaging engine is an immense undertaking for a single developer. The project spans an extensive spectrum of technical domains that usually requires an entire multidisciplinary team:</p>
+<ul>
+<li><strong>ECAD</strong>: High-speed 4-layer PCB design, impedance matching, power trees, and noise mitigation.</li>
+<li><strong>MCAD</strong>: Precision 3D optomechanics and kinematic mounts modeled in FreeCAD.</li>
+<li><strong>FPGA / HDL</strong>: Cycle-accurate Amaranth HDL gateware, PLL clock domains, and microsecond pulse modulation.</li>
+<li><strong>Scientific Python</strong>: Non-sequential optical ray-tracing in <a href="https://github.com/pyoptools/pyoptools">pyoptools</a>, CAD verification in <a href="https://github.com/hexastorm/opticaldesign">opticaldesign</a>, and OpenCV metrology.</li>
+<li><strong>Laser Optics</strong>: Gaussian beam collimation, Snell’s law refraction, and neutral density filtering.</li>
+<li><strong>Product Engineering</strong>: Usability, G-code translation, and commercialization preparation.</li>
+</ul>
+<p>Recently, the integration of advanced AI models into the engineering workflow has become a powerful multiplier. AI-assisted review for power management, firmware debugging, and mathematical derivations has significantly accelerated iteration speed, allowing a solo developer to bring a complex industrial engine close to commercial readiness.</p>
+</section>
+</section>
+<section id="parallel-path-amsystems-atum-systems" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-path-amsystems-atum-systems">Parallel Path: AMSystems &amp; Atum Systems</h2>
+<p>Following the split in 2017, TNO continued development of the multi-laser variant under <a href="https://www.amsystems.nl/">AMSystems</a>, focusing on industrial photopolymer 3D printing. The initiative secured institutional support, including a €250K loan from the Dutch state fund <a href="https://www.nwo.nl/">NWO</a> in 2021, a €50K recoater development subsidy in 2022, and a €150K loan from <a href="https://rabobank.com">Rabobank</a> in 2023.</p>
+<p>In May 2026, AMSYSTEMS and Dutch industrial 3D printer developer <a href="https://atum3d.com/">Atum3D</a> officially announced their merger to form <strong>Atum Systems</strong>, raising a <a href="https://www.tno.nl/en/newsroom/2026/05/atum-systems-3d-printing/">€1 million investment</a> backed by TNO Ventures and the Brabant Development Agency (BOM), along with Percival Participations.</p>
+<p>This €1 million round provides significant institutional confirmation that rotating prism scanning represents a game-changing technology for high-speed additive manufacturing.</p>
+<p>However, it also illustrates the diverging engineering philosophies:</p>
+<ul>
+<li><strong>Atum Systems</strong>: Pursues a complex multi-beam architecture targeting high-end industrial systems with substantial institutional backing.</li>
+<li><strong>Hexastorm</strong>: Delivers an accessible, single-beam open-hardware platform that eliminates multi-beam optical alignment bottlenecks, minimizes BOM costs, and brings high-speed laser direct imaging within reach of every workshop and lab.</li>
+</ul>
 
 
 </section>
@@ -198,18 +454,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -241,11 +486,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/hexastorm\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -255,8 +539,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -268,7 +561,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -312,6 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -337,6 +754,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -397,6 +840,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
