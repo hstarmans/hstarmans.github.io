@@ -1,10 +1,31 @@
-# Website setup
+# Hexastorm Website Source
 
-For the Hackaday Icon, the Icon framework is used.
-```quarto add mcanouil/quarto-iconify```
+Source repository for the official Hexastorm documentation and project website ([hexastorm.com](https://hexastorm.com)).
 
-Website is made with Quarto, use the documentation provided there.
+## Development Setup
 
-```quarto publish gh-pages```
+The website is built with [Quarto](https://quarto.org/).
 
-In the repository go to settings, in code and automation to pages and change custom domain to hexastorm.com
+1. **Install Quarto Iconify Extension**:
+   ```bash
+   quarto add mcanouil/quarto-iconify
+   ```
+
+2. **Run Local Preview Server**:
+   ```bash
+   quarto preview
+   ```
+
+3. **Build & Render Entire Site**:
+   ```bash
+   quarto render
+   ```
+
+## Deployment
+
+The website publishes directly to GitHub Pages:
+```bash
+quarto publish gh-pages
+```
+
+Custom domain is managed via the `CNAME` file pointing to `hexastorm.com`.

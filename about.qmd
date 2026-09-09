@@ -1,12 +1,44 @@
 ---
-title: "About"
-sidebar:
-style: "docked"
-search: true
-contents:
-    - section: "Introducton"
-      contents:
-        - introduction.qmd
+title: "About Hexastorm"
+description: "Origins, design philosophy, and the mission behind the Hexastorm open-hardware laser direct imaging project."
 ---
 
-About this site
+## The Mission
+
+Hexastorm was founded with a singular objective: to democratize **Laser Direct Imaging (LDI)**.
+
+In industrial semiconductor and PCB manufacturing, laser direct imaging systems replace physical photomasks by exposing photoresists directly with synchronized laser beams. However, commercial LDI equipment costs hundreds of thousands of dollars, placing it far out of reach for individual engineers, makers, and university research laboratories.
+
+Hexastorm bridges this gap. By utilizing a high-speed rotating refractive prism, the system eliminates expensive f-theta scan lenses, bypasses fragile galvanometer mirrors, and delivers industrial-grade scanning speeds (up to 34 m/s) and sub-60 µm resolution on a desktop budget.
+
+
+## Design Philosophy
+
+* **Physics Over Complexity**: Rather than aligning dozens of finicky laser beams, Hexastorm relies on an elegant single-beam optical path corrected dynamically using Snell's law feed-forward algorithms.
+* **Commodity Hardware First**: Precision optomechanics are paired with widely available desktop frames—most notably the Vevor CNC 3018 Pro—enabling rapid adoption without proprietary chassis costs.
+* **Open & Reproducible**: From optical ray-tracing in Python ([pyoptools](https://github.com/pyoptools/pyoptools) and [opticaldesign](https://github.com/hexastorm/opticaldesign)) to FPGA gateware in Amaranth HDL, our full stack is open source.
+
+
+## Project Status & Roadmap
+
+Hexastorm is currently undergoing comprehensive pre-production validation and firmware tuning:
+
+* **Current Focus**: Backlash and seam-width calibration between adjacent scan lanes, automated calibration routines, and finalized documentation.
+* **Commercialization Path**: We are actively working toward offering assembled scan head modules, drop-in controller kits, and custom OEM integration packages for industrial and research partners.
+
+
+## About the Creator
+
+Hexastorm is developed and maintained by **Rik Starmans**. 
+
+With a background in lithography research at [TNO](https://tno.nl) (the primary Dutch government research institute connected to the regional lithography ecosystem around [ASML](https://asml.com)), Rik has spent over a decade developing high-precision optomechanical systems, embedded electronics, and scientific Python software.
+
+
+## Connect & Inquire
+
+Interested in collaboration, technical inquiries, or following our progress toward commercial release?
+
+* **Hackaday**: Follow regular build logs and discussions on our [Hackaday Project Page](https://hackaday.io/project/21933-prism-laser-scanner).
+* **GitHub**: Inspect and star the repositories across the [Hexastorm Organization / Repositories](https://github.com/hstarmans).
+* **Direct Contact**: Reach out via GitHub issues or email for inquiries regarding partnerships and pre-release hardware.
+

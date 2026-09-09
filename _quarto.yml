@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - CNAME
 
 website:
   favicon: img/hexastormfavicon.webp
@@ -18,6 +20,8 @@ website:
         file: getstarted.qmd
       - text: History
         file: history.qmd
+      - text: About
+        file: about.qmd
     right:
       - text: "{{< iconify cib hackaday >}}"
         href: https://hackaday.io/project/21933-prism-laser-scanner
