@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Origins, design philosophy, and the mission behind the Hexastorm open-hardware laser direct imaging project.">
+<meta name="description" content="The mission, design philosophy, and technology behind the Hexastorm open-hardware laser direct imaging project.">
 
 <title>About Hexastorm – Hexastorm: Laser prism scanning</title>
 <style>
@@ -134,11 +134,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-mission" id="toc-the-mission" class="nav-link active" data-scroll-target="#the-mission">The Mission</a></li>
+  <li><a href="#the-mission-democratizing-laser-direct-imaging" id="toc-the-mission-democratizing-laser-direct-imaging" class="nav-link active" data-scroll-target="#the-mission-democratizing-laser-direct-imaging">The Mission: Democratizing Laser Direct Imaging</a></li>
   <li><a href="#design-philosophy" id="toc-design-philosophy" class="nav-link" data-scroll-target="#design-philosophy">Design Philosophy</a></li>
-  <li><a href="#project-status-roadmap" id="toc-project-status-roadmap" class="nav-link" data-scroll-target="#project-status-roadmap">Project Status &amp; Roadmap</a></li>
-  <li><a href="#about-the-creator" id="toc-about-the-creator" class="nav-link" data-scroll-target="#about-the-creator">About the Creator</a></li>
-  <li><a href="#connect-inquire" id="toc-connect-inquire" class="nav-link" data-scroll-target="#connect-inquire">Connect &amp; Inquire</a></li>
+  <li><a href="#project-roadmap" id="toc-project-roadmap" class="nav-link" data-scroll-target="#project-roadmap">Project Roadmap</a></li>
+  <li><a href="#project-origins-lead" id="toc-project-origins-lead" class="nav-link" data-scroll-target="#project-origins-lead">Project Origins &amp; Lead</a></li>
+  <li><a href="#connect-collaborate" id="toc-connect-collaborate" class="nav-link" data-scroll-target="#connect-collaborate">Connect &amp; Collaborate</a></li>
   </ul>
 </nav>
     </div>
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Origins, design philosophy, and the mission behind the Hexastorm open-hardware laser direct imaging project.
+    The mission, design philosophy, and technology behind the Hexastorm open-hardware laser direct imaging project.
   </div>
 </div>
 
@@ -169,41 +169,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-mission" class="level2">
-<h2 class="anchored" data-anchor-id="the-mission">The Mission</h2>
-<p>Hexastorm was founded with a singular objective: to democratize <strong>Laser Direct Imaging (LDI)</strong>.</p>
-<p>In industrial semiconductor and PCB manufacturing, laser direct imaging systems replace physical photomasks by exposing photoresists directly with synchronized laser beams. However, commercial LDI equipment costs hundreds of thousands of dollars, placing it far out of reach for individual engineers, makers, and university research laboratories.</p>
-<p>Hexastorm bridges this gap. By utilizing a high-speed rotating refractive prism, the system eliminates expensive f-theta scan lenses, bypasses fragile galvanometer mirrors, and delivers industrial-grade scanning speeds (up to 34 m/s) and sub-60 µm resolution on a desktop budget.</p>
+<section id="the-mission-democratizing-laser-direct-imaging" class="level2">
+<h2 class="anchored" data-anchor-id="the-mission-democratizing-laser-direct-imaging">The Mission: Democratizing Laser Direct Imaging</h2>
+<p>In semiconductor and high-density PCB manufacturing, <strong>Laser Direct Imaging (LDI)</strong> replaces physical photomasks by exposing photoresists directly with computer-controlled laser beams.</p>
+<p>However, commercial LDI equipment costs hundreds of thousands of euros and weighs several tons, placing the technology far out of reach for individual developers, academic labs, and small-scale prototyping workshops.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Industrial Precision on a Desktop Footprint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Commercial industrial LDI machines require dedicated cleanroom facilities and massive capital investments. Hexastorm was created to prove that high-speed laser direct imaging can be achieved on an accessible desktop footprint using precision rotating prism optomechanics and smart feed-forward mathematics.</p>
+</div>
+</div>
+<p>Hexastorm bridges this accessibility gap. By utilizing a high-speed rotating refractive prism, the system eliminates expensive f-theta scan lenses, bypasses fragile galvanometer mirrors, and delivers industrial-grade scanning speeds (up to 34 m/s) and sub-60 µm resolution on a desktop budget.</p>
 </section>
 <section id="design-philosophy" class="level2">
 <h2 class="anchored" data-anchor-id="design-philosophy">Design Philosophy</h2>
-<ul>
-<li><strong>Physics Over Complexity</strong>: Rather than aligning dozens of finicky laser beams, Hexastorm relies on an elegant single-beam optical path corrected dynamically using Snell’s law feed-forward algorithms.</li>
-<li><strong>Commodity Hardware First</strong>: Precision optomechanics are paired with widely available desktop frames—most notably the Vevor CNC 3018 Pro—enabling rapid adoption without proprietary chassis costs.</li>
-<li><strong>Open &amp; Reproducible</strong>: From optical ray-tracing in Python (<a href="https://github.com/pyoptools/pyoptools">pyoptools</a> and <a href="https://github.com/hexastorm/opticaldesign">opticaldesign</a>) to FPGA gateware in Amaranth HDL, our full stack is open source.</li>
-</ul>
+<div class="card-grid">
+<section id="physics-over-complexity" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="physics-over-complexity">🔬 Physics Over Complexity</h4>
+<p>Rather than aligning dozens of finicky laser diodes or complex multi-axis galvanometer mirrors, Hexastorm relies on an elegant single-beam optical path dynamically corrected for non-linear distortion using Snell’s law feed-forward algorithms.</p>
 </section>
-<section id="project-status-roadmap" class="level2">
-<h2 class="anchored" data-anchor-id="project-status-roadmap">Project Status &amp; Roadmap</h2>
-<p>Hexastorm is currently undergoing comprehensive pre-production validation and firmware tuning:</p>
-<ul>
-<li><strong>Current Focus</strong>: Backlash and seam-width calibration between adjacent scan lanes, automated calibration routines, and finalized documentation.</li>
-<li><strong>Commercialization Path</strong>: We are actively working toward offering assembled scan head modules, drop-in controller kits, and custom OEM integration packages for industrial and research partners.</li>
-</ul>
+<section id="commodity-hardware-first" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="commodity-hardware-first">🛠️ Commodity Hardware First</h4>
+<p>Precision optomechanics are paired with widely available desktop frames—most notably the standard Vevor CNC 3018 Pro—allowing anyone to build or evaluate the system without requiring custom chassis fabrication.</p>
 </section>
-<section id="about-the-creator" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-creator">About the Creator</h2>
-<p>Hexastorm is developed and maintained by <strong>Rik Starmans</strong>.</p>
-<p>With a background in lithography research at <a href="https://tno.nl">TNO</a> (the primary Dutch government research institute connected to the regional lithography ecosystem around <a href="https://asml.com">ASML</a>), Rik has spent over a decade developing high-precision optomechanical systems, embedded electronics, and scientific Python software.</p>
+<section id="open-reproducible-stack" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="open-reproducible-stack">⚡ Open &amp; Reproducible Stack</h4>
+<p>From optical ray-tracing in Python (<a href="https://github.com/pyoptools/pyoptools">pyoptools</a> and <a href="https://github.com/hexastorm/opticaldesign">opticaldesign</a>) to FPGA gateware in Amaranth HDL and 4-layer electronics (<a href="https://github.com/hstarmans/firestarter">Firestarter</a>), the entire ecosystem is open source.</p>
 </section>
-<section id="connect-inquire" class="level2">
-<h2 class="anchored" data-anchor-id="connect-inquire">Connect &amp; Inquire</h2>
-<p>Interested in collaboration, technical inquiries, or following our progress toward commercial release?</p>
-<ul>
-<li><strong>Hackaday</strong>: Follow regular build logs and discussions on our <a href="https://hackaday.io/project/21933-prism-laser-scanner">Hackaday Project Page</a>.</li>
-<li><strong>GitHub</strong>: Inspect and star the repositories across the <a href="https://github.com/hstarmans">Hexastorm Organization / Repositories</a>.</li>
-<li><strong>Direct Contact</strong>: Reach out via GitHub issues or email for inquiries regarding partnerships and pre-release hardware.</li>
-</ul>
+<section id="sustainable-methodical-engineering" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="sustainable-methodical-engineering">📐 Sustainable, Methodical Engineering</h4>
+<p>Engineered with continuous precision over a multi-year development arc, balancing rigorous physical modeling against accessible manufacturing techniques for real-world reliability.</p>
+</section>
+</div>
+</section>
+<section id="project-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="project-roadmap">Project Roadmap</h2>
+<p>Hexastorm is an independent open-hardware research initiative advancing at a deliberate, reproducible pace:</p>
+<div class="steps-grid">
+<div class="step-card">
+<p><span class="step-num">01</span></p>
+<section id="open-research-alpha" class="level3">
+<h3 class="anchored" data-anchor-id="open-research-alpha">Open Research Alpha</h3>
+<p><em>Current Phase</em></p>
+<p>Validating seam stitching, backlash compensation, automated calibration routines, and maker replication on the CNC 3018 platform. All CAD, HDL gateware, and simulation code remain open source.</p>
+</section>
+</div>
+<div class="step-card">
+<p><span class="step-num">02</span></p>
+<section id="modular-scan-head-kits" class="level3">
+<h3 class="anchored" data-anchor-id="modular-scan-head-kits">Modular Scan Head Kits</h3>
+<p><em>In Progress</em></p>
+<p>Evaluating pre-assembled, optically aligned scan head modules and plug-and-play <a href="https://github.com/hstarmans/firestarter">Firestarter</a> controller kits for researchers, educators, and early adopters.</p>
+</section>
+</div>
+<div class="step-card">
+<p><span class="step-num">03</span></p>
+<section id="ecosystem-integration" class="level3">
+<h3 class="anchored" data-anchor-id="ecosystem-integration">Ecosystem Integration</h3>
+<p><em>Future Horizon</em></p>
+<p>Collaborating with academic research labs and open-source digital fabrication projects to integrate high-speed rotating prism engines into desktop toolchains.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="project-origins-lead" class="level2">
+<h2 class="anchored" data-anchor-id="project-origins-lead">Project Origins &amp; Lead</h2>
+<p>Hexastorm is an independent open-hardware initiative architected and maintained by <strong>Rik Starmans</strong>.</p>
+<p>With a technical background in lithography research at <a href="https://tno.nl">TNO</a> (the Dutch applied research institute deeply connected to the regional high-tech semiconductor ecosystem around <a href="https://asml.com">ASML</a>), Rik has spent over a decade developing precision optomechanics, embedded firmware, and scientific Python software.</p>
+<p>Hexastorm is pursued as an independent research endeavor alongside his professional career in enterprise technology consulting, driven by a personal engineering passion for democratizing high-resolution microfabrication tools.</p>
+</section>
+<section id="connect-collaborate" class="level2">
+<h2 class="anchored" data-anchor-id="connect-collaborate">Connect &amp; Collaborate</h2>
+<p>Hexastorm is an open initiative that welcomes peer exchange, open-source contributions, and technical collaboration:</p>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 14px;">
+<p><a href="https://hackaday.io/project/21933-prism-laser-scanner" class="btn-secondary-hex" target="_blank" rel="noopener"> <i class="bi bi-journal-text" style="color: #f1d165;"></i> Hackaday Project Logs </a> <a href="https://github.com/hstarmans/hexastorm" class="btn-secondary-hex" target="_blank" rel="noopener"> <i class="bi bi-github" style="color: #f1d165;"></i> GitHub Repositories </a> <a href="mailto:hstarmans@hexastorm.com" class="btn-secondary-hex"> <i class="bi bi-envelope" style="color: #f1d165;"></i> Contact via Email </a></p>
+</div>
 
 
 </section>

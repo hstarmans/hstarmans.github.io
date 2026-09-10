@@ -137,12 +137,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#hardware-platform-cnc-3018-pro-drop-in" id="toc-hardware-platform-cnc-3018-pro-drop-in" class="nav-link" data-scroll-target="#hardware-platform-cnc-3018-pro-drop-in">Hardware Platform: CNC 3018 Pro Drop-In</a></li>
   <li><a href="#complete-software-optical-ecosystem" id="toc-complete-software-optical-ecosystem" class="nav-link" data-scroll-target="#complete-software-optical-ecosystem">Complete Software &amp; Optical Ecosystem</a></li>
-  <li><a href="#video-walkthroughs" id="toc-video-walkthroughs" class="nav-link" data-scroll-target="#video-walkthroughs">Video Walkthroughs</a>
-  <ul class="collapse">
-  <li><a href="#live-exposure-run" id="toc-live-exposure-run" class="nav-link" data-scroll-target="#live-exposure-run">Live Exposure Run</a></li>
-  <li><a href="#hardware-electronics-walkthrough" id="toc-hardware-electronics-walkthrough" class="nav-link" data-scroll-target="#hardware-electronics-walkthrough">Hardware &amp; Electronics Walkthrough</a></li>
-  <li><a href="#technology-summary-theory" id="toc-technology-summary-theory" class="nav-link" data-scroll-target="#technology-summary-theory">Technology Summary &amp; Theory</a></li>
-  </ul></li>
+  <li><a href="#video-walkthroughs" id="toc-video-walkthroughs" class="nav-link" data-scroll-target="#video-walkthroughs">Video Walkthroughs</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -160,53 +155,132 @@ ul.task-list li input[type="checkbox"] {
 <section id="hardware-platform-cnc-3018-pro-drop-in" class="level2">
 <h2 class="anchored" data-anchor-id="hardware-platform-cnc-3018-pro-drop-in">Hardware Platform: CNC 3018 Pro Drop-In</h2>
 <p>To make building and evaluating Hexastorm accessible without requiring custom CNC frames, the 2026 hardware iteration is designed as a <strong>direct drop-in upgrade for the ubiquitous Vevor CNC 3018 Pro</strong>:</p>
-<ul>
-<li><strong>Plug-and-Play Enclosure</strong>: The 4-layer unified controller board (<a href="https://github.com/hstarmans/firestarter">Firestarter</a>) matches the mounting points and fits directly inside the stock CNC 3018 plastic enclosure.</li>
-<li><strong>Standard 24V Architecture</strong>: Uses the stock 24V DC power supply, eliminating complex dual-voltage power setups.</li>
-<li><strong>Integrated Drive Electronics</strong>: Onboard TMC2209 silent stepper motor drivers support sensorless homing for X, Y, and Z stages.</li>
-<li><strong>Modular Optical Scan Head</strong>: The delicate optical assembly (housing the rotating glass prism, 405 nm laser diode, photodiode, and laser driver) connects to the main controller via a clean 20-pin Flat Flexible Cable (FFC).</li>
-<li><strong>Machine Vision Interface</strong>: Integrated 24-pin DVP connector runs an OV2640 camera directly on the ESP32-S3 for alignment and registration.</li>
-</ul>
+<div class="steps-grid">
+<div class="step-card">
+<p><span class="step-num">01</span></p>
+<section id="the-desktop-frame" class="level3">
+<h3 class="anchored" data-anchor-id="the-desktop-frame">The Desktop Frame</h3>
+<p>Uses the standard Vevor CNC 3018 Pro aluminum extrusion chassis, stock 24V DC power supply, and leadscrew axes. Eliminates custom CNC fabrication while providing a rigid, low-cost motion platform.</p>
+</section>
+</div>
+<div class="step-card">
+<p><span class="step-num">02</span></p>
+<section id="the-control-core" class="level3">
+<h3 class="anchored" data-anchor-id="the-control-core">The Control Core</h3>
+<p>Houses the unified 4-layer <a href="https://github.com/hstarmans/firestarter">Firestarter PCB</a> with ESP32-S3, Lattice iCE40UP5K FPGA, and TMC2209 silent stepper drivers. Fits directly inside the stock CNC 3018 enclosure.</p>
+</section>
+</div>
+<div class="step-card">
+<p><span class="step-num">03</span></p>
+<section id="the-optical-scan-head" class="level3">
+<h3 class="anchored" data-anchor-id="the-optical-scan-head">The Optical Scan Head</h3>
+<p>The optomechanical assembly—housing the rotating glass prism, 405 nm laser diode, photodiode sync, and high-speed driver—connects to the controller via a single 20-pin Flat Flexible Cable (FFC).</p>
+</section>
+</div>
+</div>
 </section>
 <section id="complete-software-optical-ecosystem" class="level2">
 <h2 class="anchored" data-anchor-id="complete-software-optical-ecosystem">Complete Software &amp; Optical Ecosystem</h2>
 <p>Hexastorm spans a complete end-to-end stack from optical physics to real-time silicon gateware:</p>
+<div class="card-grid">
+<section id="electronics-gateware" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="electronics-gateware">⚡ Electronics &amp; Gateware</h4>
 <ul>
-<li><a href="https://github.com/hstarmans/firestarter">Firestarter Driver PCB</a><br>
-Unified 4-layer control electronics housing the ESP32-S3, Lattice iCE40UP5K FPGA, TMC2209 stepper drivers, and 24V power tree. Manufactured with sponsorship from <a href="https://www.pcbway.com/">PCBWay</a>.</li>
-<li><a href="https://github.com/hstarmans/hexastorm">Hexastorm Gateware</a><br>
+<li><strong><a href="https://github.com/hstarmans/firestarter">Firestarter Driver PCB</a></strong><br>
+Unified 4-layer control electronics housing the ESP32-S3, Lattice iCE40 FPGA, and TMC2209 drivers. Sponsored by <a href="https://www.pcbway.com/">PCBWay</a>.</li>
+<li><strong><a href="https://github.com/hstarmans/hexastorm">Hexastorm Gateware</a></strong><br>
 Amaranth HDL gateware and LUNA components providing deterministic microsecond laser pulse modulation up to 12 MHz.</li>
-<li><a href="https://github.com/hstarmans/hexastorm_design">Hexastorm CAD Models</a><br>
-Mechanical models, optomechanical mounts, and 3D printable adapters modeled in FreeCAD.</li>
-<li><a href="https://github.com/hexastorm/opticaldesign">Optical Design &amp; Verification</a><br>
-Python tools for optical simulation, Snell’s law prism ray-tracing, analytical spot-size calculation, and automated FreeCAD verification.</li>
-<li><a href="https://github.com/pyoptools/pyoptools">PyOpTools</a><br>
-Open-source Python optical ray-tracing library utilized for non-sequential optical simulations and ray propagation analysis.</li>
-<li><a href="https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER">RepRap Whitepaper</a><br>
-Foundational technical documentation detailing rotating prism optics, spot distortion math, and comparisons with galvanometer/polygon systems.</li>
-<li><a href="https://hackaday.io/project/21933-prism-laser-scanner">Hackaday Project Logs</a><br>
-Extensive engineering log documenting the multi-year development history, calibration algorithms, and hardware iterations.</li>
 </ul>
+</section>
+<section id="optics-simulation" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="optics-simulation">🔬 Optics &amp; Simulation</h4>
+<ul>
+<li><strong><a href="https://github.com/hexastorm/opticaldesign">Optical Design &amp; Verification</a></strong><br>
+Python tools for optical simulation, Snell’s law prism ray-tracing, analytical spot-size calculation, and automated FreeCAD verification.</li>
+<li><strong><a href="https://github.com/pyoptools/pyoptools">PyOpTools</a></strong><br>
+Open-source Python optical ray-tracing library utilized for non-sequential optical simulations and ray propagation analysis.</li>
+</ul>
+</section>
+<section id="mechanics-cad" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="mechanics-cad">🛠️ Mechanics &amp; CAD</h4>
+<ul>
+<li><strong><a href="https://github.com/hstarmans/hexastorm_design">Hexastorm CAD Models</a></strong><br>
+Mechanical models, optomechanical mounts, and 3D printable adapters modeled in FreeCAD.</li>
+<li><strong><a href="https://reprap.org/wiki/Open_hardware_fast_high_resolution_LASER">RepRap Whitepaper</a></strong><br>
+Foundational technical documentation detailing rotating prism optics, spot distortion math, and comparisons with galvanometer/polygon systems.</li>
+</ul>
+</section>
+<section id="history-community" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="history-community">📚 History &amp; Community</h4>
+<ul>
+<li><strong><a href="https://hackaday.io/project/21933-prism-laser-scanner">Hackaday Project Logs</a></strong><br>
+Extensive engineering log documenting the multi-year development history, calibration algorithms, and hardware iterations.</li>
+<li><strong><a href="./history.html">Development History</a></strong><br>
+Learn about the design evolution from early 2017 polygon prototypes to the unified 2026 solid glass prism architecture.</li>
+</ul>
+</section>
+</div>
 </section>
 <section id="video-walkthroughs" class="level2">
 <h2 class="anchored" data-anchor-id="video-walkthroughs">Video Walkthroughs</h2>
-<section id="live-exposure-run" class="level3">
-<h3 class="anchored" data-anchor-id="live-exposure-run">Live Exposure Run</h3>
-<p>Demonstration of an active raster exposure run using the rotating prism engine:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/dR09Tev0cPk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="hardware-electronics-walkthrough" class="level3">
-<h3 class="anchored" data-anchor-id="hardware-electronics-walkthrough">Hardware &amp; Electronics Walkthrough</h3>
-<p>Walkthrough of the optical head, motor assembly, and driver board:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/B5dpPtdh3tc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="technology-summary-theory" class="level3">
-<h3 class="anchored" data-anchor-id="technology-summary-theory">Technology Summary &amp; Theory</h3>
-<p>Comprehensive presentation on the physics, history, and mechanics of rotating prism laser scanning:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/b7ArZDhsyfI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="video-grid">
+<div class="video-card">
+<div class="video-thumb-wrapper" onclick="this.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/dR09Tev0cPk?autoplay=1\' title=\'Live Exposure Run\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width: 100%; height: 100%; border: none;\'></iframe>';" title="Click to play Live Exposure Run">
+<img src="https://img.youtube.com/vi/dR09Tev0cPk/maxresdefault.jpg" alt="Live Exposure Run" class="video-thumb-img" loading="lazy">
+<div class="video-play-btn">
+<svg viewbox="0 0 24 24" width="26" height="26">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</div>
+</div>
+<div class="video-card-content">
+<h3 class="anchored">
+Live Exposure Run
+</h3>
+<p>
+Active raster exposure demonstration using the high-speed rotating prism engine.
+</p>
+</div>
+</div>
+<div class="video-card">
+<div class="video-thumb-wrapper" onclick="this.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/B5dpPtdh3tc?autoplay=1\' title=\'Hardware &amp; Electronics Walkthrough\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width: 100%; height: 100%; border: none;\'></iframe>';" title="Click to play Hardware &amp; Electronics">
+<img src="https://img.youtube.com/vi/B5dpPtdh3tc/maxresdefault.jpg" alt="Hardware &amp; Electronics Walkthrough" class="video-thumb-img" loading="lazy">
+<div class="video-play-btn">
+<svg viewbox="0 0 24 24" width="26" height="26">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</div>
+</div>
+<div class="video-card-content">
+<h3 class="anchored">
+Hardware &amp; Electronics
+</h3>
+<p>
+Detailed engineering walkthrough of the optical scan head, motor assembly, and driver board.
+</p>
+</div>
+</div>
+<div class="video-card">
+<div class="video-thumb-wrapper" onclick="this.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/b7ArZDhsyfI?autoplay=1\' title=\'Physics &amp; Technology Summary\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width: 100%; height: 100%; border: none;\'></iframe>';" title="Click to play Physics &amp; Technology Summary">
+<img src="https://img.youtube.com/vi/b7ArZDhsyfI/maxresdefault.jpg" alt="Physics &amp; Technology Summary" class="video-thumb-img" loading="lazy">
+<div class="video-play-btn">
+<svg viewbox="0 0 24 24" width="26" height="26">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</div>
+</div>
+<div class="video-card-content">
+<h3 class="anchored">
+Physics &amp; Technology
+</h3>
+<p>
+Comprehensive presentation on rotating prism scanning optics, distortion theory, and mechanics.
+</p>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 
