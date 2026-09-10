@@ -25,10 +25,12 @@ hide-description: true
 :::
 
 ::: {.hero-actions}
-[What is a PCB?](#what-is-a-pcb){.btn-secondary-hex}
-[Read the History](history.html){.btn-secondary-hex}
-[Hackaday Project Logs](https://hackaday.io/project/21933-prism-laser-scanner){.btn-secondary-hex target="_blank"}
-[Get Started & Code](getstarted.html){.btn-secondary-hex}
+```{=html}
+<a href="#what-is-a-pcb" class="btn-secondary-hex">What is a PCB?</a>
+<a href="history.html" class="btn-secondary-hex">Read the History</a>
+<a href="https://hackaday.io/project/21933-prism-laser-scanner" class="btn-secondary-hex" target="_blank" rel="noopener noreferrer">Hackaday Project Logs</a>
+<a href="getstarted.html" class="btn-secondary-hex">Get Started &amp; Code</a>
+```
 :::
 
 ::: {.hero-media}
