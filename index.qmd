@@ -26,16 +26,23 @@ hide-description: true
 
 ::: {.hero-actions}
 ```{=html}
+<a href="#interactive-3d-model" class="btn-primary-hex">Explore in 3D &bull; AR</a>
+<a href="#video-showcase" class="btn-secondary-hex">▶ Watch Film</a>
 <a href="#what-is-a-pcb" class="btn-secondary-hex">What is a PCB?</a>
 <a href="history.html" class="btn-secondary-hex">Read the History</a>
-<a href="https://hackaday.io/project/21933-prism-laser-scanner" class="btn-secondary-hex" target="_blank" rel="noopener noreferrer">Hackaday Project Logs</a>
+<a href="https://hackaday.io/project/21933-prism-laser-scanner" class="btn-secondary-hex" target="_blank" rel="noopener noreferrer">Hackaday Logs</a>
 <a href="getstarted.html" class="btn-secondary-hex">Get Started &amp; Code</a>
 ```
 :::
 
 ::: {.hero-media}
 ```{=html}
-<img src="vid/0001.gif" alt="The Hexastorm Rotating Prism Scanner" style="width: 100%; display: block; margin: 0; padding: 0;">
+<div class="hero-media-wrapper">
+  <picture>
+    <source srcset="img/hexastorm_hero.webp" type="image/webp">
+    <img src="img/hexastorm_hero.png" alt="Hexastorm High-Resolution Laser Scanner 2K Render" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </picture>
+</div>
 ```
 :::
 
@@ -92,6 +99,152 @@ While commercial fab houses (such as [PCBWay](https://www.pcbway.com/)) are the 
 Hexastorm is an open-hardware laser scanning engine engineered for rapid, high-resolution raster exposure in printed circuit board photolithography and photopolymer additive manufacturing. 
 
 By replacing slow Cartesian gantries and delicate galvanometer mirrors with a balanced, high-RPM rotating refractive prism, Hexastorm achieves scanning velocities up to **34 meters per second** while maintaining flat-field linearity and sub-micron repeatability.
+
+
+## Watch Hexastorm in Action {#video-showcase}
+
+```{=html}
+<div class="video-showcase-container">
+  <div class="model-header">
+    <div class="model-title-group">
+      <h3>
+        <span>Hexastorm: Open-Hardware Laser Direct Imager</span>
+      </h3>
+      <p>Watch the complete system in action: drop-in CNC 3018 integration, FPGA microsecond laser timing, kinematic magnetic tool docking, and sub-50 µm PCB fabrication.</p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="https://www.youtube.com/watch?v=LcF5PH-dYss" target="_blank" rel="noopener noreferrer" class="btn-secondary-hex" style="padding: 6px 14px; font-size: 0.82rem; border-radius: 20px;">
+        Open in YouTube ↗
+      </a>
+      <div class="video-badge-pulse">
+        <span class="video-pulse-dot"></span>
+        <span>Showcase Film</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-thumb-wrapper video-showcase-player" onclick="this.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/LcF5PH-dYss?autoplay=1\' title=\'Hexastorm: Open-Hardware Laser Direct Imager\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width: 100%; height: 100%; border: none; border-radius: 12px;\'></iframe>';" title="Click to play Hexastorm Showcase Video">
+    <picture>
+      <img src="https://img.youtube.com/vi/LcF5PH-dYss/maxresdefault.jpg" alt="Hexastorm: Open-Hardware Laser Direct Imager Showcase Film" class="video-thumb-img" loading="lazy" />
+    </picture>
+    <div class="video-play-btn video-showcase-play-btn">
+      <svg viewBox="0 0 24 24" width="34" height="34"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+
+  <div class="video-feature-pills">
+    <div class="video-pill"><span>⚡</span> Sub-50 µm resolution in &lt;30 mins</div>
+    <div class="video-pill"><span>🔄</span> 3,000 RPM 4-sided rotating prism</div>
+    <div class="video-pill"><span>🧲</span> Kinematic magnetic tool docking</div>
+    <div class="video-pill"><span>🎛️</span> Drop-in CNC 3018 FPGA controller</div>
+  </div>
+</div>
+```
+
+
+## Interactive 3D Digital Twin {#interactive-3d-model}
+
+```{=html}
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+<div class="model-showcase-container">
+  <div class="model-header">
+    <div class="model-title-group">
+      <h3>
+        <span>Hexastorm CNC 3018 Pro Assembly</span>
+      </h3>
+      <p>Interactive 3D model of the complete scanhead, optical chassis, and CNC motion platform. On mobile devices, tap AR to view in Augmented Reality on your desk.</p>
+    </div>
+    <div class="model-badge-pulse">
+      <span class="pulse-dot"></span>
+      <span>3D &bull; AR Ready</span>
+    </div>
+  </div>
+
+  <model-viewer id="hexastormViewer"
+                src="models/hexastorm.glb"
+                poster="img/hexastorm_hero.webp"
+                alt="Hexastorm Open-Hardware Laser Scanner 3D Model"
+                camera-controls
+                autoplay
+                auto-rotate
+                auto-rotate-delay="1500"
+                rotation-per-second="15deg"
+                shadow-intensity="1.5"
+                shadow-softness="0.7"
+                environment-image="neutral"
+                exposure="1.05"
+                camera-orbit="40deg 68deg 105%"
+                min-camera-orbit="auto auto 20%"
+                max-camera-orbit="auto auto 300%"
+                field-of-view="30deg"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                ar-scale="auto"
+                loading="lazy">
+
+  <div slot="poster" class="model-poster-overlay">
+    <img src="img/hexastorm_hero.webp" alt="Hexastorm 3D Render" class="model-poster-img">
+    <div class="model-loading-badge">
+      <div class="model-spinner"></div>
+      <span class="model-loading-title">Loading 3D Digital Twin...</span>
+      <span class="model-loading-sub">Interactive 3D model will appear shortly. You can rotate and zoom freely once loaded.</span>
+      <div class="model-progress-track">
+        <div class="model-progress-bar" id="modelProgressBar"></div>
+      </div>
+    </div>
+  </div>
+
+</model-viewer>
+
+  <div class="model-controls-bar">
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <button class="view-preset-btn active" data-orbit="40deg 68deg 110%" data-target="auto auto auto">Isometric</button>
+      <button class="view-preset-btn" data-orbit="20deg 76deg 36%" data-target="0.03m 0.09m 0.48m">Scanhead &amp; Optics</button>
+      <button class="view-preset-btn" data-orbit="165deg 55deg 48%" data-target="-0.17m 0.04m 0.38m">Controller Board</button>
+      <button class="view-preset-btn" data-orbit="5deg 60deg 45%" data-target="0.02m 0.03m 0.48m">Workpiece Bed</button>
+    </div>
+    <div class="model-hint">
+      <span>🖱️ Drag to rotate &bull; Scroll to zoom &bull; Shift+drag to pan</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const viewer = document.getElementById('hexastormViewer');
+  const progressBar = document.getElementById('modelProgressBar');
+  const presetButtons = document.querySelectorAll('.view-preset-btn');
+
+  if (viewer && progressBar) {
+    viewer.addEventListener('progress', (e) => {
+      progressBar.style.width = Math.round(e.detail.totalProgress * 100) + '%';
+    });
+  }
+
+  function applyPreset(btn) {
+    if (!viewer || !btn) return;
+    const orbit = btn.getAttribute('data-orbit');
+    const target = btn.getAttribute('data-target');
+
+    // Pause auto-rotate so user can clearly inspect the selected component
+    viewer.autoRotate = false;
+
+    if (orbit) viewer.cameraOrbit = orbit;
+    if (target) viewer.cameraTarget = target;
+
+    presetButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  presetButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      applyPreset(this);
+    });
+  });
+})();
+</script>
+```
 
 
 ## System Specifications
