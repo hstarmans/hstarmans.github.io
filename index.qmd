@@ -166,12 +166,13 @@ By replacing slow Cartesian gantries and delicate galvanometer mirrors with a ba
                 poster="img/hexastorm_hero.webp"
                 alt="Hexastorm Open-Hardware Laser Scanner 3D Model"
                 camera-controls
+                touch-action="pan-y"
                 autoplay
                 auto-rotate
                 auto-rotate-delay="1500"
                 rotation-per-second="15deg"
-                shadow-intensity="1.5"
-                shadow-softness="0.7"
+                shadow-intensity="1.0"
+                shadow-softness="0.8"
                 environment-image="neutral"
                 exposure="1.05"
                 camera-orbit="40deg 68deg 105%"
